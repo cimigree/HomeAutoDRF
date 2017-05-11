@@ -9,8 +9,8 @@ class Service(models.Model):
     class Meta:
         ordering = ('name',)
 
-    # def __unicode__(self):
-    #     return '%s' % (self.name)
+    def __str__(self):          
+        return self.name
 
 class Device(models.Model):
     created = models.DateTimeField(auto_now_add=True)
@@ -21,8 +21,8 @@ class Device(models.Model):
     class Meta:
         ordering = ('type',)
 
-    # def __unicode__(self):
-    #     return '%s' % (self.name)
+    def __str__(self):
+         return self.name
 
 class HomesService(models.Model):
     created = models.DateTimeField(auto_now_add=True)

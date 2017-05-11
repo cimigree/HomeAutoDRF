@@ -24,8 +24,6 @@ class ServiceSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'name', 'defaultconfig')
 
 class HomesServiceSerializer(serializers.HyperlinkedModelSerializer):
-    device = serializers.ChoiceField(choices=list(Device.objects.all().values_list('name', flat=False)))
-    service = serializers.ChoiceField(choices=list(Service.objects.all().values_list('name', flat=False)))
     config = serializers.JSONField(binary='true')
 
     class Meta:
